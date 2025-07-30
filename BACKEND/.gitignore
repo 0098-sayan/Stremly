@@ -1,2 +1,4 @@
-BACKEND/node_modules/
-BACKEND/.env
+node_modules/
+.env
+
+# This file is used to store environment variables for the backend application.
