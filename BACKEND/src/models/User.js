@@ -69,7 +69,7 @@ userSchema.methods.matchPassword = async function  (enteredPassword) {
   return isPaswordCorrect; 
 }
 
-const user = mongoose.model("user", userSchema);
+const user = mongoose.model("User", userSchema);
 
 
 
