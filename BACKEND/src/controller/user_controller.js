@@ -1,19 +1,19 @@
 import User from "../models/User.js";
 import FriendRequest from "../models/FriendRequest.js";
 
-export async function getRecomendedUsers(req, res) {
+export async function getRecommendedUsers(req, res) {
   try {
     const currentUserId = req.user.id;
     const currentUser = req.user;
 
-    const recomendedUsers = await User.find({
+    const recommendedUsers = await User.find({
       $and: [
         { _id: { $ne: currentUserId } }, // Exclude current user
         { _id: { $nin: currentUser.friends } }, // Exclude friends
         { isOnboarded: true }, // Only include users who are onboarded
       ],
     });
-    res.status(200).json({ recomendedUsers });
+    res.status(200).json( recommendedUsers );
   } catch (error) {
     console.error("Error fetching recommended users:", error.message);
     res.status(500).json({ message: "Internal server error" });

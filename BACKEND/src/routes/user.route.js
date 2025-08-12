@@ -5,7 +5,7 @@ import {
   getFriendRequest,
   getMyFriends,
   getOutgoingFriendReqs,
-  getRecomendedUsers,
+  getRecommendedUsers,
   sendFriendRequest,
 } from "../controller/user_controller.js";
 
@@ -14,7 +14,7 @@ const router = express.Router();
 //apply auth middleware to protect the routes
 router.use(protectRoute);
 
-router.get("/", getRecomendedUsers);
+router.get("/", getRecommendedUsers);
 router.get("/friends", getMyFriends);
 
 router.post("/friend-request/:id", sendFriendRequest);
